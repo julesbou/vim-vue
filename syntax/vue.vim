@@ -98,11 +98,10 @@ if s:syntaxes.scss
 endif
 
 if s:syntaxes.less
-  syntax include @less syntax/less.vim
   if exists("b:current_syntax")
     unlet b:current_syntax
   endif
-  syntax region less keepend matchgroup=PreProc start=/<style\%( \+scoped\)\? lang=\("\|'\)[^\1]*less[^\1]*\1\%( \+scoped\)\?>/ end="</style>" contains=@less fold
+  syntax region css keepend start=/<style\%( \+scoped\)\? lang=\("\|'\)[^\1]*less[^\1]*\1\%( \+scoped\)\?>/ end="</style>" contains=@less fold
 endif
 
 let b:current_syntax = "vue"
